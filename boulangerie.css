@@ -1,0 +1,1001 @@
+/* =====================================================
+   FEUILLE DE STYLE - BoulangerieBectance
+   Fichier : boulangerie.css
+   ===================================================== */
+
+
+/* =====================================================
+   1. VARIABLES CSS
+   On définit ici les couleurs et polices réutilisables
+   ===================================================== */
+:root {
+    /* Couleurs principales */
+    --marron-fonce:   #8B4513;
+    --marron-clair:   #D2691E;
+    --sable:          #F4A460;
+    --dore:           #DAA520;
+    --fond-creme:     #FFF8F0;
+    --fond-section:   #FFF3E0;
+    --texte-fonce:    #2C1810;
+    --texte-gris:     #7a6055;
+    --blanc:          #FFFFFF;
+    --gris-clair:     #f0e8df;
+
+    /* Couleurs pour les alertes (anciennement codées en dur) */
+    --alerte-fond:    #fff3cd;
+    --alerte-texte:   #856404;
+    --note-fond:      #e8f4f8;
+    --note-texte:     #0c6e8c;
+
+    /* Polices */
+    --police-titre: 'Playfair Display', Georgia, serif;
+    --police-corps: 'Lato', Arial, sans-serif;
+}
+
+
+/* =====================================================
+   2. RESET CSS
+   On supprime les marges et paddings par défaut
+   ===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =====================================================
+   3. STYLES DE BASE
+   ===================================================== */
+body {
+    font-family: var(--police-corps);
+    font-size: 16px;
+    color: var(--texte-fonce);
+    background-color: var(--fond-creme);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--police-titre);
+    line-height: 1.3;
+}
+
+a {
+    color: var(--marron-fonce);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Classe utilitaire pour cacher du texte visuellement
+   mais le garder lisible par les lecteurs d'écran */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+
+/* =====================================================
+   4. CONTENEUR
+   ===================================================== */
+.conteneur {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+
+/* =====================================================
+   5. HEADER
+   ===================================================== */
+header {
+    background-color: var(--marron-fonce);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+
+.logo-nom {
+    display: block;
+    font-family: var(--police-titre);
+    font-size: 1.5rem;
+    color: var(--blanc);
+    font-weight: bold;
+}
+
+.logo-sous-titre {
+    font-size: 0.8rem;
+    color: var(--sable);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Menu de navigation */
+.menu {
+    display: flex;
+    gap: 32px;
+}
+
+.menu a {
+    color: var(--blanc);
+    font-size: 1rem;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--sable);
+    text-decoration: none;
+    border-bottom-color: var(--sable);
+}
+
+
+/* =====================================================
+   6. BANNIÈRE PRINCIPALE
+   ===================================================== */
+.banniere {
+    background-image: linear-gradient(135deg, var(--marron-fonce) 0%, var(--marron-clair) 100%);
+    padding: 80px 32px;
+    text-align: center;
+    color: var(--blanc);
+}
+
+.banniere-accroche {
+    font-size: 1rem;
+    color: var(--sable);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.banniere h1 {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.banniere-description {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   7. BOUTONS
+   ===================================================== */
+.bouton-principal {
+    display: inline-block;
+    background-color: var(--sable);
+    color: var(--texte-fonce);
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.bouton-principal:hover {
+    background-color: var(--dore);
+    text-decoration: none;
+}
+
+.bouton-secondaire {
+    display: inline-block;
+    border: 2px solid var(--blanc);
+    color: var(--blanc);
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.bouton-secondaire:hover {
+    background-color: var(--blanc);
+    color: var(--marron-fonce);
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   8. STYLES COMMUNS AUX SECTIONS
+   ===================================================== */
+section {
+    padding: 64px 0;
+}
+
+.titre-section {
+    font-size: 2rem;
+    color: var(--marron-fonce);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.titre-section-blanc {
+    font-size: 2rem;
+    color: var(--blanc);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.sous-titre-section {
+    text-align: center;
+    color: var(--texte-gris);
+    font-size: 1.1rem;
+    margin-bottom: 48px;
+}
+
+/* Classe réutilisable pour les encadrés "fournil"
+   (remplace .message-fournil ET .encadre-message) */
+.alerte-fournil {
+    background-color: var(--alerte-fond);
+    border-left: 4px solid var(--dore);
+    padding: 16px;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--alerte-texte);
+    margin-bottom: 24px;
+}
+
+
+/* =====================================================
+   9. SECTION HORAIRES
+   ===================================================== */
+.section-horaires {
+    background-color: var(--fond-section);
+}
+
+.grille-horaires {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.carte-horaire {
+    background-color: var(--blanc);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.15);
+    border-top: 4px solid var(--marron-fonce);
+}
+
+
+
+.carte-horaire p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.carte-ferme {
+    opacity: 0.5;
+    border-top-color: #999;
+}
+
+
+/* =====================================================
+   10. SECTION PRODUITS ET TABLEAUX
+   ===================================================== */
+.section-produits {
+    background-color: var(--fond-creme);
+}
+
+/* Galerie de photos en haut de la section produits */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.galerie-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Petite photo dans les tableaux */
+.img-produit {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 6px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.titre-categorie {
+    font-size: 1.5rem;
+    color: var(--marron-fonce);
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gris-clair);
+}
+
+.titre-categorie:first-of-type {
+    margin-top: 0;
+}
+
+.tableau-prix {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+    margin-bottom: 8px;
+}
+
+.tableau-prix thead {
+    background-color: var(--marron-fonce);
+    color: var(--blanc);
+}
+
+.tableau-prix th {
+    padding: 14px 20px;
+    text-align: left;
+    font-family: var(--police-titre);
+    font-size: 1.1rem;
+}
+
+.tableau-prix td {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--gris-clair);
+    vertical-align: middle;
+}
+
+.tableau-prix tbody tr:nth-child(even) {
+    background-color: var(--fond-section);
+}
+
+.tableau-prix tbody tr:hover {
+    background-color: var(--alerte-fond);
+}
+
+.tableau-prix td:last-child,
+.tableau-prix th:last-child {
+    text-align: right;
+    font-weight: bold;
+    color: var(--marron-fonce);
+}
+
+.note-snacking {
+    margin-top: 24px;
+    padding: 16px;
+    background-color: var(--note-fond);
+    border-radius: 8px;
+    color: var(--note-texte);
+    font-style: italic;
+}
+
+
+/* =====================================================
+   11. SECTION ÉVÉNEMENTS
+   ===================================================== */
+.section-evenements {
+    background-color: var(--marron-fonce);
+    text-align: center;
+}
+
+.evenements-texte {
+    font-size: 1.1rem;
+    color: var(--blanc);
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto 32px;
+}
+
+.liste-evenements {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px 40px;
+    margin-bottom: 40px;
+}
+
+.liste-evenements li {
+    color: var(--sable);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   12. SECTION HISTOIRE
+   ===================================================== */
+.section-histoire {
+    background-color: var(--fond-section);
+}
+
+.histoire-contenu {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+.histoire-texte {
+    flex: 1;
+}
+
+.histoire-texte p {
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+    color: var(--texte-fonce);
+}
+
+.citation {
+    background-color: var(--blanc);
+    border-left: 4px solid var(--dore);
+    padding: 24px;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 24px;
+    color: var(--marron-fonce);
+}
+
+.citation cite {
+    display: block;
+    margin-top: 12px;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--texte-gris);
+    font-size: 0.9rem;
+}
+
+.valeurs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.carte-valeur {
+    background-color: var(--blanc);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+    text-align: center;
+}
+
+
+.carte-valeur h3 {
+    color: var(--marron-fonce);
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.carte-valeur p {
+    color: var(--texte-gris);
+    font-size: 0.9rem;
+}
+
+
+/* =====================================================
+   13. SECTION CONTACT
+   ===================================================== */
+.section-contact {
+    background-color: var(--fond-creme);
+}
+
+.contact-grille {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.contact-formulaire h3,
+.contact-infos h3 {
+    font-size: 1.5rem;
+    color: var(--marron-fonce);
+    margin-bottom: 24px;
+}
+
+.champ {
+    margin-bottom: 20px;
+}
+
+.champ label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: var(--texte-fonce);
+}
+
+.champ input,
+.champ select,
+.champ textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--gris-clair);
+    border-radius: 8px;
+    font-family: var(--police-corps);
+    font-size: 1rem;
+    color: var(--texte-fonce);
+    background-color: var(--blanc);
+    transition: border-color 0.3s;
+}
+
+.champ input:focus,
+.champ select:focus,
+.champ textarea:focus {
+    outline: none;
+    border-color: var(--marron-fonce);
+}
+
+.champ textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* Case à cocher : mise en page horizontale */
+.champ-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.champ-checkbox input[type="checkbox"] {
+    width: auto;
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: var(--marron-fonce);
+}
+
+.champ-checkbox label {
+    font-weight: normal;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.bouton-envoyer {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--marron-fonce);
+    color: var(--blanc);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--police-titre);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bouton-envoyer:hover {
+    background-color: var(--marron-clair);
+}
+
+.mention-rgpd {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--texte-gris);
+    font-style: italic;
+}
+
+.info-bloc {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--gris-clair);
+}
+
+.info-bloc h4 {
+    color: var(--marron-fonce);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.info-bloc a {
+    color: var(--marron-clair);
+    font-weight: bold;
+}
+
+.info-note {
+    font-size: 0.85rem;
+    color: var(--texte-gris);
+    font-style: italic;
+}
+
+.tableau-horaires {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableau-horaires td {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--gris-clair);
+}
+
+.tableau-horaires td:last-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+.ligne-ferme td {
+    color: #999;
+}
+
+
+/* =====================================================
+   14. FOOTER
+   ===================================================== */
+footer {
+    background-color: var(--texte-fonce);
+    color: #ccc;
+    padding: 64px 0 0;
+}
+
+.footer-grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.footer-logo {
+    font-family: var(--police-titre);
+    font-size: 1.2rem;
+    color: var(--sable);
+    margin-bottom: 12px;
+}
+
+.footer-col h4 {
+    color: var(--sable);
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+.footer-col p {
+    line-height: 2;
+    font-size: 0.95rem;
+}
+
+.footer-menu li {
+    margin-bottom: 8px;
+}
+
+.footer-menu a,
+footer a {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-menu a:hover,
+footer a:hover {
+    color: var(--sable);
+    text-decoration: none;
+}
+
+.footer-bas {
+    border-top: 1px solid #444;
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+
+/* =====================================================
+   15. RESPONSIVE DESIGN
+   ===================================================== */
+
+/* --- Tablette (max 900px) --- */
+@media (max-width: 900px) {
+
+    .header-top {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .banniere h1 {
+        font-size: 2rem;
+    }
+
+    .grille-horaires {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galerie {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grille {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .histoire-contenu {
+        flex-direction: column;
+    }
+
+    .valeurs {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .contact-grille {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Smartphone (max 600px) --- */
+@media (max-width: 600px) {
+
+    .conteneur {
+        padding: 0 16px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .banniere {
+        padding: 48px 16px;
+    }
+
+    .banniere h1 {
+        font-size: 1.6rem;
+    }
+
+    .grille-horaires {
+        grid-template-columns: 1fr;
+    }
+
+    .galerie {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grille {
+        grid-template-columns: 1fr;
+    }
+
+    .valeurs {
+        flex-direction: column;
+    }
+
+    .footer-bas {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
+
+
+/* =====================================================
+   16. ÉLÉMENTS JAVASCRIPT
+   ===================================================== */
+
+/* --- Bouton burger (visible uniquement sur mobile) --- */
+#bouton-burger {
+    display: none; /* caché sur desktop */
+    background: none;
+    border: 2px solid var(--blanc);
+    color: var(--blanc);
+    font-size: 1.5rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* --- Bouton retour en haut --- */
+#bouton-haut {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background-color: var(--marron-fonce);
+    color: var(--blanc);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    /* caché par défaut */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+/* Quand le JS ajoute la classe "visible" */
+#bouton-haut.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* --- Modale zoom photo --- */
+.modale {
+    display: none; /* cachée par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Quand le JS ajoute la classe "modale-visible" */
+.modale.modale-visible {
+    display: flex;
+}
+
+.modale img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 8px;
+}
+
+/* Bouton fermer la modale */
+#modale-fermer {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: var(--blanc);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Curseur pointer sur les photos de la galerie */
+.galerie-img {
+    cursor: pointer;
+}
+
+/* --- Messages d'erreur dans le formulaire --- */
+.message-erreur {
+    color: #E24B4A;
+    font-size: 0.85rem;
+    margin-top: 6px;
+}
+
+/* --- Message de succès après envoi --- */
+.message-succes {
+    display: none; /* caché par défaut */
+    background-color: #EAF3DE;
+    border-left: 4px solid #639922;
+    color: #27500A;
+    padding: 16px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 24px;
+    font-weight: bold;
+}
+
+/* Quand le JS ajoute la classe "visible" */
+.message-succes.visible {
+    display: block;
+}
+
+/* --- Burger responsive --- */
+@media (max-width: 600px) {
+    #bouton-burger {
+        display: block; /* affiché sur mobile */
+    }
+
+    /* Le menu est caché sur mobile par défaut */
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        width: 100%;
+        padding: 16px 0;
+    }
+
+    /* Le JS ajoute "menu-ouvert" pour l'afficher */
+    .menu.menu-ouvert {
+        display: flex;
+    }
+}
+
+
+/* =====================================================
+   17. PAGES LÉGALES
+   Styles pour mentions légales, CGV, confidentialité
+   ===================================================== */
+
+.section-page-legale {
+    background-color: var(--fond-creme);
+    padding: 64px 0;
+}
+
+.section-page-legale h1 {
+    margin-bottom: 8px;
+}
+
+/* Date de mise à jour sous le titre */
+.date-maj {
+    text-align: center;
+    color: var(--texte-gris);
+    font-style: italic;
+    margin-bottom: 48px;
+}
+
+/* Chaque bloc de texte légal */
+.bloc-legal {
+    background-color: var(--blanc);
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.08);
+    border-left: 4px solid var(--marron-fonce);
+}
+
+.bloc-legal h2 {
+    font-size: 1.3rem;
+    color: var(--marron-fonce);
+    margin-bottom: 16px;
+}
+
+.bloc-legal p {
+    color: var(--texte-fonce);
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.bloc-legal p:last-child {
+    margin-bottom: 0;
+}
+
+/* Listes dans les pages légales */
+.liste-legale {
+    list-style: disc;
+    padding-left: 24px;
+    margin: 12px 0;
+}
+
+.liste-legale li {
+    color: var(--texte-fonce);
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Bouton retour au site */
+.section-page-legale .bouton-principal {
+    display: inline-block;
+    margin-top: 32px;
+}

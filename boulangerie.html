@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BoulangerieBectance - Pains, viennoiseries et patisseries faits maison.">
+    <title>BoulangerieBectance - Boulangerie Artisanale</title>
+    <link rel="stylesheet" href="boulangerie.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <div>
+                    <span class="logo-nom">BoulangerieBectance</span>
+                    <p class="logo-sous-titre">Boulangerie Artisanale</p>
+                </div>
+            </div>
+            <button id="bouton-burger" aria-label="Ouvrir le menu">&#9776;</button>
+            <nav aria-label="Navigation principale">
+                <ul class="menu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#produits">Nos Produits</a></li>
+                    <li><a href="#histoire">Notre Histoire</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="banniere" id="accueil">
+            <p class="banniere-accroche">Fait main, avec passion</p>
+            <h1>Du pain comme autrefois,<br>pour aujourd'hui</h1>
+            <p class="banniere-description">Chaque matin, nous petrissons et cuisons pour vous offrir le meilleur de l'artisanat boulanger.</p>
+            <a href="#produits" class="bouton-principal">Decouvrir nos produits</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="section-horaires">
+            <div class="conteneur">
+                <h2 class="titre-section">Nos horaires d'ouverture</h2>
+                <div class="grille-horaires">
+                    <div class="carte-horaire">
+                        
+                        <h3>Lundi - Vendredi</h3>
+                        <p>07h00 - 19h30</p>
+                    </div>
+                    <div class="carte-horaire">
+                        
+                        <h3>Samedi</h3>
+                        <p>07h00 - 19h00</p>
+                    </div>
+                    <div class="carte-horaire carte-ferme">
+                        
+                        <h3>Dimanche</h3>
+                        <p>Ferme</p>
+                    </div>
+                </div>
+                <p class="alerte-fournil">
+                    En pleine preparation dans mon fournil, je ne peux pas toujours repondre au telephone.
+                    N'hesitez pas a me laisser un message ou a privilegier l'email, je vous rappelle dans la journee !
+                </p>
+            </div>
+        </section>
+
+        <section class="section-produits" id="produits">
+            <div class="conteneur">
+                <h2 class="titre-section">Nos Produits &amp; Tarifs</h2>
+                <p class="sous-titre-section">Tout est prepare ici, chaque matin, avec des ingredients selectionnes avec soin</p>
+                <div class="galerie">
+                    <img src="asset boulangerie/paincampagne.jpg" alt="Pain de campagne" class="galerie-img">
+                    <img src="asset boulangerie/baguettefrancaise.jpg" alt="Baguette francaise" class="galerie-img">
+                    <img src="asset boulangerie/croissant.jpg" alt="Croissant" class="galerie-img">
+                    <img src="asset boulangerie/painauchocolat.jpg" alt="Pain au chocolat" class="galerie-img">
+                    <img src="asset boulangerie/eclair.jpg" alt="Eclair" class="galerie-img">
+                    <img src="asset boulangerie/tartelette.jpg" alt="Tartelette" class="galerie-img">
+                </div>
+
+                <h3 class="titre-categorie">Boulangerie</h3>
+                <table class="tableau-prix">
+                    <caption class="sr-only">Prix Boulangerie</caption>
+                    <thead><tr><th>Produit</th><th>Prix TTC</th></tr></thead>
+                    <tbody>
+                        <tr><td><img src="asset boulangerie/baguettefrancaise.jpg" alt="" class="img-produit"> Baguette de Tradition Francaise</td><td>1,30 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/image-pain.jpg" alt="" class="img-produit"> Baguette classique</td><td>1,10 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/paincampagne.jpg" alt="" class="img-produit"> Pain de Campagne (la piece de 400g)</td><td>2,50 &euro;</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 class="titre-categorie">Viennoiseries</h3>
+                <table class="tableau-prix">
+                    <caption class="sr-only">Prix Viennoiseries</caption>
+                    <thead><tr><th>Produit</th><th>Prix TTC</th></tr></thead>
+                    <tbody>
+                        <tr><td><img src="asset boulangerie/croissant.jpg" alt="" class="img-produit"> Croissant pur beurre (AOP)</td><td>1,20 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/painauchocolat.jpg" alt="" class="img-produit"> Pain au chocolat</td><td>1,30 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/painraisin.jpg" alt="" class="img-produit"> Pain aux raisins</td><td>1,40 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/chaussonpomme.jpg" alt="" class="img-produit"> Chausson aux pommes</td><td>1,50 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/croissantsamandes.jpg" alt="" class="img-produit"> Croissant aux amandes</td><td>1,80 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/chocolatamandes.jpg" alt="" class="img-produit"> Pain au chocolat aux amandes</td><td>1,90 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/painsuisse.jpg" alt="" class="img-produit"> Pain suisse (creme patissiere et pepites)</td><td>1,60 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/vienoisepepite.jpg" alt="" class="img-produit"> Viennoise aux pepites de chocolat</td><td>1,50 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/chouquette.jpg" alt="" class="img-produit"> Sachet de 10 chouquettes</td><td>3,00 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/brioche-trésseé.jpg" alt="" class="img-produit"> Brioche tressee (500g)</td><td>5,50 &euro;</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 class="titre-categorie">Patisserie</h3>
+                <table class="tableau-prix">
+                    <caption class="sr-only">Prix Patisserie</caption>
+                    <thead><tr><th>Produit</th><th>Prix TTC</th></tr></thead>
+                    <tbody>
+                        <tr><td><img src="asset boulangerie/eclair.jpg" alt="" class="img-produit"> Eclair (chocolat / cafe)</td><td>3,20 &euro;</td></tr>
+                        <tr><td><img src="asset boulangerie/tartelette.jpg" alt="" class="img-produit"> Tartelette aux fruits de saison</td><td>3,50 &euro;</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 class="titre-categorie">Snacking (Midi)</h3>
+                <table class="tableau-prix">
+                    <caption class="sr-only">Prix Snacking</caption>
+                    <thead><tr><th>Produit</th><th>Prix TTC</th></tr></thead>
+                    <tbody>
+                        <tr><td><img src="asset boulangerie/sandwich.jpg" alt="" class="img-produit"> Sandwich Classique (Jambon / Beurre / Emmental)</td><td>4,50 &euro;</td></tr>
+                        <tr><td>Formule Complete (1 Sandwich + 1 Boisson + 1 Dessert)</td><td>8,90 &euro;</td></tr>
+                    </tbody>
+                </table>
+                <p class="note-snacking">Le snacking est disponible uniquement le midi en semaine. Les sandwichs sont prepares le matin meme.</p>
+            </div>
+        </section>
+
+        <section class="section-evenements">
+            <div class="conteneur">
+                <h2 class="titre-section-blanc">Un evenement a celebrer ?</h2>
+                <p class="evenements-texte">Mariage, anniversaire, repas d'entreprise... Nous creons des pieces montees et des assortiments sur mesure pour rendre vos moments inoubliables.</p>
+                <ul class="liste-evenements">
+                    <li>Mariages &amp; baptemes</li>
+                    <li>Anniversaires</li>
+                    <li>Repas et seminaires d'entreprise</li>
+                    <li>Buffets et cocktails</li>
+                </ul>
+                <a href="#contact" class="bouton-secondaire">Demander un devis gratuit</a>
+            </div>
+        </section>
+
+        <section class="section-histoire" id="histoire">
+            <div class="conteneur">
+                <h2 class="titre-section">Notre Histoire</h2>
+                <div class="histoire-contenu">
+                    <div class="histoire-texte">
+                        <p>C'est en 2012 que Fayss Malaga ouvre les portes de sa boulangerie dans le coeur du village. Fils de boulanger, il perpetue une tradition familiale transmise de generation en generation.</p>
+                        <p>Aujourd'hui, c'est toute une equipe passionnee qui se leve chaque jour a 4h du matin pour que vous trouviez votre pain chaud a l'ouverture.</p>
+                        <p>Nous travaillons avec des <strong>farines de moulins locaux</strong> et du <strong>beurre AOP Charentes-Poitou</strong> pour vous garantir des produits d'exception.</p>
+                        <blockquote class="citation">
+                            "Un bon pain, c'est de la patience, du respect du produit et beaucoup d'amour."
+                            <cite>- Fayss Malaga, Maitre Boulanger</cite>
+                        </blockquote>
+                    </div>
+                    <div class="valeurs">
+                        <div class="carte-valeur">
+                            
+                            <h3>Local &amp; Responsable</h3>
+                            <p>Farines de moulins locaux, oeufs de fermes proches, fruits de saison.</p>
+                        </div>
+                        <div class="carte-valeur">
+                            
+                            <h3>Artisanat &amp; Patience</h3>
+                            <p>Nos pates fermentent lentement toute la nuit. Pas de shortcuts, juste du metier.</p>
+                        </div>
+                        <div class="carte-valeur">
+                            
+                            <h3>Proximite</h3>
+                            <p>Nous vous connaissons par votre prenom et gardons votre baguette si vous avez du retard !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-contact" id="contact">
+            <div class="conteneur">
+                <h2 class="titre-section">Contact &amp; Acces</h2>
+                <div class="contact-grille">
+                    <div class="contact-formulaire">
+                        <h3>Envoyez-nous un message</h3>
+                        <div id="message-succes" class="message-succes">
+                            Votre message a bien ete envoye ! Nous vous repondrons dans la journee.
+                        </div>
+                        <form action="#" method="post">
+                            <div class="champ">
+                                <label for="nom">Nom complet *</label>
+                                <input type="text" id="nom" name="nom" placeholder="Votre nom et prenom" required>
+                            </div>
+                            <div class="champ">
+                                <label for="email">Adresse email *</label>
+                                <input type="email" id="email" name="email" placeholder="votre@email.fr" required>
+                            </div>
+                            <div class="champ">
+                                <label for="telephone">Telephone</label>
+                                <input type="tel" id="telephone" name="telephone" placeholder="06 XX XX XX XX">
+                            </div>
+                            <div class="champ">
+                                <label for="motif">Motif *</label>
+                                <select id="motif" name="motif" required>
+                                    <option value="">-- Choisissez un motif --</option>
+                                    <option value="question">Question generale</option>
+                                    <option value="devis">Demande de devis evenementiel</option>
+                                    <option value="commande">Commande speciale</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div class="champ">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Decrivez votre demande..." required></textarea>
+                            </div>
+                            <div class="champ champ-checkbox">
+                                <input type="checkbox" id="consentement" name="consentement" required>
+                                <label for="consentement">J'accepte que mes donnees soient utilisees pour ameliorer la qualite du site *</label>
+                            </div>
+                            <button type="submit" class="bouton-envoyer">Envoyer le message</button>
+                            <p class="mention-rgpd">* Champs obligatoires. Donnees utilisees uniquement pour repondre a votre demande (RGPD).</p>
+                        </form>
+                    </div>
+                    <div class="contact-infos">
+                        <h3>Informations pratiques</h3>
+                        <div class="info-bloc">
+                            <h4>Adresse</h4>
+                            <p>12 Rue de la Bectance<br>35000 Rennes</p>
+                        </div>
+                        <div class="info-bloc">
+                            <h4>Telephone</h4>
+                            <p><a href="tel:0299000000">02 99 XX XX XX</a></p>
+                            <p class="info-note">Lun-Ven : 09h-14h / Sam : 09h-12h</p>
+                        </div>
+                        <div class="info-bloc">
+                            <h4>Email</h4>
+                            <p><a href="mailto:boulangeriebectance@gmail.com">boulangeriebectance@gmail.com</a></p>
+                        </div>
+                        <div class="info-bloc">
+                            <h4>Horaires d'ouverture</h4>
+                            <table class="tableau-horaires">
+                                <tr><td>Lundi - Vendredi</td><td>07h00 - 19h30</td></tr>
+                                <tr><td>Samedi</td><td>07h00 - 19h00</td></tr>
+                                <tr class="ligne-ferme"><td>Dimanche</td><td>Ferme</td></tr>
+                            </table>
+                        </div>
+                        <div class="alerte-fournil">
+                            <p>En pleine preparation dans mon fournil, je ne peux pas toujours repondre au telephone. Laissez un message, je vous rappelle dans la journee !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="conteneur">
+            <div class="footer-grille">
+                <div class="footer-col">
+                    <p class="footer-logo">BoulangerieBectance</p>
+                    <p>Boulangerie artisanale depuis 2012.<br>Produits frais, faits maison chaque jour.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#produits">Nos Produits</a></li>
+                        <li><a href="#histoire">Notre Histoire</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Nous trouver</h4>
+                    <p>12 Rue de la Bectance</p>
+                    <p>02 99 XX XX XX</p>
+                    <p>boulangeriebectance@gmail.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Horaires</h4>
+                    <p>Lun - Ven : 07h00 - 19h30</p>
+                    <p>Samedi : 07h00 - 19h00</p>
+                    <p>Dimanche : Ferme</p>
+                </div>
+            </div>
+            <div class="footer-bas">
+                <p>&copy; 2025 BoulangerieBectance - Tous droits reserves</p>
+                <p>
+                    <a href="mentions-legales (1).html">Mentions legales</a> |
+                    <a href="politique-confidentialite (1).html">Politique de confidentialite</a> |
+                    <a href="cgv (1).html">CGV</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="bouton-haut" aria-label="Retour en haut de la page">&#8593;</button>
+
+    <div id="modale-photo" class="modale">
+        <button id="modale-fermer" aria-label="Fermer la photo">&#10005;</button>
+        <img id="modale-img" src="" alt="">
+    </div>
+
+    <script src="boulangerie.js"></script>
+
+</body>
+</html>
